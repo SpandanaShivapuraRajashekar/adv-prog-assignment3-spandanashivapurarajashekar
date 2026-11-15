@@ -83,14 +83,7 @@ def good_broyden(f, x0, representation, pruning=None):
         else:
             Jinv.append(u, w)
 
-            # Apply pruning if required
-            if pruning is not None and len(Jinv) > N:
-                print(
-                    f"{pruning} pruning triggered: "
-                    f"d={d}, rank={len(Jinv)}"
-                )
-
-                Jinv.prune(N, method=pruning)
+           
 
         x = x_new
         fx = fx_new
